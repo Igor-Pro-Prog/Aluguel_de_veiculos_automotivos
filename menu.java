@@ -1,6 +1,7 @@
 
 
 
+
 import java.util.Scanner;
 
 public class menu {
@@ -22,13 +23,41 @@ public class menu {
         switch(opcao){
             case 1:  
             System.out.println("gerente");  
-            break;
+            while(opcao != 4){ 
+              System.out.println("vc é um cliente:\n"
+              + "Digite 1 para: opcoes gerente \n"
+              + "Digite 2 para: opcoes gerente \n"
+              + "Digite 3 para: Sair \n");
+
+              Scanner novaentrada2 = new Scanner(System.in);
+              int opcao3 = novaentrada2.nextInt();
+                       
+              switch(opcao3){
+              
+                case 1:
+                System.out.println("opcao 1");
+                opcao = 4;
+                break;
+    
+                case 2:
+                System.out.println("opcao 2");
+                opcao = 4;
+                break;
+    
+                case 3:
+                System.out.println("opcao 3");
+                opcao = 4;
+                 break;
+                default:
+                  System.out.println("opcao digitada invalida");  
+              }
+          }
             
            
 
 
             case 2:
-
+            System.out.println("cliente");
             while(opcao != 4){ 
               System.out.println("vc é um cliente:\n"
               + "Digite 1 para: Alugar veiculo \n"
@@ -41,37 +70,33 @@ public class menu {
               switch(opcao2){
               
                 case 1:
-               
-                System.out.println("Bem-vindo ao sistema de aluguel de veículos!");
-                System.out.println("Por favor, informe o seu nome :"); 
-                String nome = scanner.nextLine();
-                System.out.println("Por favor, informe seu CPF:");
-                String cpf = scanner.nextLine();
-                cliente cliente =new cliente(nome, cpf);
-                System.out.println("Por favor, informe o nome do modelo q deseja:"); 
-                String modelo = scanner.nextLine();
-               
-                cliente.alugarVeiculo(modelo, cpf);
-                opcao = 4;
-                break;
-    
-                case 2:
-                opcao = 4;
-                break;
-    
-                case 3:
-                opcao = 4;
-                 break;
-                default:
+                Scanner novaentrada3 = new Scanner(System.in);
+                int opcao4 = novaentrada3.nextInt();
+                       
+                switch(opcao4){
+              
+                  case 1:
+                  System.out.println("opcao 1");
+                  opcao = 4;
+                  break;
+      
+                  case 2:
+                  System.out.println("opcao 2");
+                  opcao = 4;
+                  break;
+      
+                  case 3:
+                  System.out.println("opcao 3");
+                  opcao = 4;
+                   break;
+                  default:
                   System.out.println("opcao digitada invalida");  
+              }
+          }
               }
           }
         }
       }
-        }
+        
       
   
-
- 
-
-    
