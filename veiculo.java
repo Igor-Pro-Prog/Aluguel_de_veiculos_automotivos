@@ -1,9 +1,11 @@
-class Veiculo {
+
+
+public class veiculo {
     private String modelo;
     private String marca;
     private boolean disponivel;
 
-    public Veiculo(String modelo, String marca) {
+    public veiculo(String modelo, String marca) {
         this.modelo = modelo;
         this.marca = marca;
         this.disponivel = true;
@@ -24,4 +26,10 @@ class Veiculo {
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
     }
+    
+
 }
+
+ 
+
+    
