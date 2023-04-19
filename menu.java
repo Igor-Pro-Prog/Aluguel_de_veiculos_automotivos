@@ -16,11 +16,12 @@ public class menu {
         + "Digite 2 para: Cliente  \n"
         + "Digite 3 para: Sair \n");
         int opcao = entrada.nextInt();
-
+        
 
 
         switch(opcao){
             case 1:  
+            gerente gerente= new gerente();
             System.out.println("vc escolheu a opcao gerente");
             System.out.println("Digite o login do gerente:");
             String login = scanner.nextLine();
@@ -38,6 +39,13 @@ public class menu {
             
                   case 1:
                   System.out.println("deu certo");
+                  System.out.println("Digite o nome do modelo:");
+                  String modelo = scanner.nextLine();
+                  System.out.println("Digite o nome da marca:");
+                  String marca = scanner.nextLine();
+                  gerente.cadastrarVeiculo(modelo, marca);
+                  System.out.println("veiculo cadastrado");
+                  System.out.println(gerente.toString());
                   opcao = 4;
                   break;
     
