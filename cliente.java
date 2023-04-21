@@ -5,15 +5,22 @@ import java.util.List;
 public class cliente {
     private String nome;
     private String cpf;
+    private int numero;
     public List<veiculo> veiculos;
     public List<cliente> clientes;
 
 
-    public cliente(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
+    public cliente() {
+   
+    }
+    
+    public int getNumero() {
+        return numero;
     }
 
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
     public String getNome() {
         return nome;
     }
@@ -21,6 +28,14 @@ public class cliente {
     public String getCpf() {
         return cpf;
     }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    
     public cliente buscarCliente(String cpf) {
         for (cliente cliente : clientes) {
             if (cliente.getCpf().equals(cpf)) {
@@ -71,5 +86,3 @@ public class cliente {
     }
 
 }
-
-
