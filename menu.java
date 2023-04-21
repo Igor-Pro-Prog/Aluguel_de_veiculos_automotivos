@@ -1,6 +1,5 @@
 
 
-
 import java.util.Scanner;
 
 public class menu {
@@ -46,16 +45,20 @@ public class menu {
                   String marca = scanner.nextLine();
                   repositoriocarro.cadastrarVeiculo(modelo, marca);
                   System.out.println("veiculo cadastrado");
+                  repositoriocarro.listaveiculos();
                   opcao3 = 4;
                   break;
+
+
                   case 2:
                   System.out.println("deu certo");
                   System.out.println("Digite o nome do cliente:");
                   String nome = scanner.nextLine();
                   System.out.println("Digite o cpf dp cliente:");
                   String cpf = scanner.nextLine();
-                 repositorioclientes.cadastrarCliente(nome, cpf);
+                  repositorioclientes.cadastrarCliente(nome, cpf);
                   System.out.println("cliente cadastrado");
+                  repositorioclientes.listaclientes();
                   opcao3 = 4;
                   break;
     
@@ -99,4 +102,12 @@ public class menu {
       
         
       
+  
+        
+      
+  
+
+ 
+
+    
   
