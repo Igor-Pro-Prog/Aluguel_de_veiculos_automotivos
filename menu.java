@@ -31,36 +31,68 @@ public class menu {
                 System.out.println("Login de gerente bem-sucedido!");
                 System.out.println("Oque deseja fazer:\n"
                 + "Digite 1 para: cadastrar Veiculo \n"
-                + "Digite 2 para: cadastrar Cliente \n"
-                + "Digite 3 para: Sair \n");                 
+                + "Digite 2 para: remover Veiculo \n"
+                + "Digite 3 para: cadastrar Cliente \n"
+                + "Digite 4 para: remover Cliente \n"
+                + "Digite 5 para: Sair \n");                 
                 Scanner novaentrada2 = new Scanner(System.in);
                 int opcao3 = novaentrada2.nextInt();
                 switch(opcao3){
             
                   case 1:
+                  
                   System.out.println("deu certo");
                   System.out.println("Digite o nome do modelo:");
                   String modelo = scanner.nextLine();
                   System.out.println("Digite o nome da marca:");
                   String marca = scanner.nextLine();
-                  repositoriocarro.cadastrarVeiculo(modelo, marca);
+                  System.out.println("Digite o codigo:");
+                  int codigo = scanner.nextInt();
+                  veiculo veiculo = new veiculo();
+                  veiculo.setModelo(modelo);
+                  veiculo.setMarca(marca);
+                  veiculo.setCodigo(codigo);
+                  repositoriocarro.cadastrarVeiculo(veiculo);
                   System.out.println("veiculo cadastrado");
                   repositoriocarro.listaveiculos();
                   opcao3 = 4;
                   break;
 
-
                   case 2:
+                  System.out.println("deu certo");
+                  System.out.println("digite o codigo do carro q deseja remover");
+                  int cod = scanner.nextInt();
+                  repositoriocarro.deletarVeiculo(cod);
+                  repositoriocarro.listaveiculos();
+                  opcao3 = 4;
+
+                  break;
+
+                  case 3:
                   System.out.println("deu certo");
                   System.out.println("Digite o nome do cliente:");
                   String nome = scanner.nextLine();
                   System.out.println("Digite o cpf dp cliente:");
                   String cpf = scanner.nextLine();
-                  repositorioclientes.cadastrarCliente(nome, cpf);
+                  System.out.println("Digite o codigo:");
+                  int numero = scanner.nextInt();
+                  cliente cliente = new cliente();
+                  cliente.setNome(nome);
+                  cliente.setCpf(cpf);
+                  cliente.setNumero(numero);
+                  repositorioclientes.cadastrarCliente(cliente);
                   System.out.println("cliente cadastrado");
                   repositorioclientes.listaclientes();
                   opcao3 = 4;
                   break;
+
+                  case 4:
+                  System.out.println("deu certo");
+                  System.out.println("digite o numero do cliente q deseja remover");
+                  int num = scanner.nextInt();
+                  repositorioclientes.deletarCliente(num);
+                  repositorioclientes.listaclientes();
+                  opcao3 = 4;
     
               }
             }else{
@@ -102,12 +134,4 @@ public class menu {
       
         
       
-  
-        
-      
-  
-
- 
-
-    
   
