@@ -3,26 +3,31 @@ import java.util.List;
 
 
 public class repositoriocarro {
-    public List<veiculo> veiculos;
-
+    public List<veiculo> veiculos =  new ArrayList<veiculo>();
+    veiculo veiculo = new veiculo();
     public  repositoriocarro() {
-       this.veiculos = new ArrayList<veiculo>();
-       veiculos.add(new veiculo("gol","volks"));
-       veiculos.add(new veiculo("golf","volks"));
-       veiculos.add(new veiculo("polo","volks"));
-       veiculos.add(new veiculo("up","volks"));
-       veiculos.add(new veiculo("gol quadrado","volks"));
-       
-
+       veiculo v1 = new veiculo();
+       v1.setModelo("gol");
+       v1.setMarca("volks");
+       v1.setCodigo(1);
+       veiculos.add(v1);
     }
-    public void cadastrarVeiculo(String modelo, String marca) {
-    veiculo veiculo = new veiculo(modelo, marca);
-    veiculos.add(veiculo);
+    public void cadastrarVeiculo(veiculo veiculo) {
+        veiculos.add(veiculo);
     
-}
+    }
+
+    public void deletarVeiculo(int codigo){
+        for(veiculo veiculo : veiculos){
+            if(veiculo.getCodigo() == codigo){
+                veiculos.remove(veiculo);
+            }
+        }
+    }
+
     public void listaveiculos(){
         for (int i = 0; i <veiculos.size(); i++) {
-            System.out.println( "modelo:" + veiculos.get(i).getModelo() +"," + "marca:" + veiculos.get(i).getMarca());
+            System.out.println( "modelo:" + veiculos.get(i).getModelo() +"," + "marca:" + veiculos.get(i).getMarca() + "," + "codigo:" + veiculos.get(i).getCodigo());
             
           }
     } 
