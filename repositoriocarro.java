@@ -4,11 +4,10 @@ import java.util.List;
 
 public class repositoriocarro {
     public List<veiculo> veiculos;
-    public List<cliente> clientes;
     gerente gerente;
 
    public  repositoriocarro() {
-       veiculos = new ArrayList<>();
+       this.veiculos = new ArrayList<veiculo>();
        veiculos.add(new veiculo("gol","volks"));
        veiculos.add(new veiculo("golf","volks"));
        veiculos.add(new veiculo("polo","volks"));
@@ -17,6 +16,11 @@ public class repositoriocarro {
        
 
    }
+   public void cadastrarVeiculo(String modelo, String marca) {
+    veiculo veiculo = new veiculo(modelo, marca);
+    veiculos.add(veiculo);
+    
+}
    
 
 
