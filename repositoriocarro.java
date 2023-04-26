@@ -1,4 +1,4 @@
-package pkt;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,8 +68,7 @@ public class repositoriocarro {
         if (veiculo != null && cliente != null) {
             veiculo.setDisponivel(false);
             //cliente.adicionarVeiculonalista(veiculo);
-            System.out.println("kaiiii");
-            System.out.println("Veículo " + veiculo.getModelo() + " alugado para o cliente " + cliente.getNome());
+            System.out.println("Veículo:" + veiculo.getModelo() + "," + " alugado para o cliente " + cliente.getNome());
             System.out.println("veiculo alugado");       
         } else {
             System.out.println("Veículo não disponível ou cliente não encontrado.");

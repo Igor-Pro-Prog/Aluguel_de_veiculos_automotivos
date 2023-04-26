@@ -1,4 +1,4 @@
-package pkt; 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -6,10 +6,7 @@ public class repositorioclientes {
     public List<cliente> clientes =  new ArrayList<cliente>();
 
     public  repositorioclientes() {
-    	cliente c1 = new cliente();
-    	c1.setNome("fulano");
-    	c1.setCpf("101101");
-    	c1.setNumero(001);
+    	cliente c1 = new cliente("fulano","101101",001);
         clientes.add(c1);
     }
     public void cadastrarCliente(cliente cliente) {
@@ -17,8 +14,8 @@ public class repositorioclientes {
        
     }
 
-    public void deletarCliente(int numero){
-    	cliente clienta = new cliente();
+    public void deletarCliente(String nome ,String cpf, int numero){
+    	cliente clienta = new cliente(nome, cpf, numero);
         for(cliente cliente  : clientes){       	
             if(cliente.getNumero() == numero){
             clienta = cliente;
@@ -40,7 +37,6 @@ public class repositorioclientes {
                 return cliente;
             }
         }
-        System.out.println("33trteturr");
         return null;
     }
 }

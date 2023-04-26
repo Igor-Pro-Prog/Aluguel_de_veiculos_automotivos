@@ -1,4 +1,4 @@
-package pkt;
+
 import java.util.Scanner;
 
 public class menu {
@@ -67,10 +67,7 @@ public class menu {
         							String cpf = scanner.nextLine();
         							System.out.println("Digite o numero:");
         							int numero = Integer.valueOf(scanner.nextLine());
-        							cliente cliente = new cliente();
-        							cliente.setNome(nome);
-        							cliente.setCpf(cpf);
-        							cliente.setNumero(numero);
+        							cliente cliente = new cliente(nome, cpf, numero);
         							repositorioclientes.cadastrarCliente(cliente);
         							System.out.println("cliente cadastrado");
         							repositorioclientes.listaclientes();
@@ -78,9 +75,13 @@ public class menu {
 
         						case 4:
         							System.out.println("vc escolheu remover cliente");
+									System.out.println("Digite o nome do cliente:");
+        							String delNome = scanner.nextLine();
+        							System.out.println("Digite o cpf do cliente:");
+        							String delCpf = scanner.nextLine();
         							System.out.println("digite o numero do cliente q deseja remover");
-        							int num = Integer.valueOf(scanner.nextLine());
-        							repositorioclientes.deletarCliente(num);
+        							int delNum = Integer.valueOf(scanner.nextLine());
+        							repositorioclientes.deletarCliente(delNome, delCpf, delNum);
         							repositorioclientes.listaclientes();
         							break;
         						

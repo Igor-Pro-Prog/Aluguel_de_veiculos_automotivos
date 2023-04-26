@@ -1,4 +1,4 @@
-package pkt;
+
 
 public class veiculo {
     private String modelo;
