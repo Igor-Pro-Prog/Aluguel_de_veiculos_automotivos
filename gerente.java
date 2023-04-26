@@ -1,7 +1,6 @@
-
-import java.util.ArrayList;
-import java.util.List;
+package pkt;
+//import java.util.List;
+//import java.util.ArrayList;
 
 public class gerente {
-
-    }
+}

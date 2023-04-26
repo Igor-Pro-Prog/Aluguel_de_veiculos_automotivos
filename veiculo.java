@@ -1,12 +1,15 @@
+package pkt;
 
 public class veiculo {
     private String modelo;
     private String marca;
-    private boolean disponivel;
+    private boolean disponivel=true;
     private int codigo;
+    
     public veiculo() {
         
     }
+    
     public int getCodigo() {
         return codigo;
     }
@@ -30,12 +33,12 @@ public class veiculo {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
+    
     public void setMarca(String marca) {
         this.marca = marca;
     }
+    
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
     }
-    
-
 }

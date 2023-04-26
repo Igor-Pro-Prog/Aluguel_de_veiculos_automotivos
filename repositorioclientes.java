@@ -1,18 +1,16 @@
-
-
+package pkt; 
 import java.util.ArrayList;
 import java.util.List;
 
 public class repositorioclientes {
-
     public List<cliente> clientes =  new ArrayList<cliente>();
-    cliente cliente = new cliente();
 
     public  repositorioclientes() {
-       
-
-        
-
+    	cliente c1 = new cliente();
+    	c1.setNome("fulano");
+    	c1.setCpf("101101");
+    	c1.setNumero(001);
+        clientes.add(c1);
     }
     public void cadastrarCliente(cliente cliente) {
         clientes.add(cliente);
@@ -20,19 +18,29 @@ public class repositorioclientes {
     }
 
     public void deletarCliente(int numero){
-        for(cliente cliente  : clientes){
+    	cliente clienta = new cliente();
+        for(cliente cliente  : clientes){       	
             if(cliente.getNumero() == numero){
-                clientes.remove(cliente);
+            clienta = cliente;
             }
         }
+        clientes.remove(clienta);
     }
-
 
     public void listaclientes(){
         for (int i = 0; i <clientes.size(); i++) {
-            System.out.println( "mome:" + clientes.get(i).getNome() +"," + "cpf:" + clientes.get(i).getCpf() );
+            System.out.println( "nome:" + clientes.get(i).getNome() +"," + "cpf:" + clientes.get(i).getCpf() + "numero:" + clientes.get(i).getNumero());    
+        }
+    }
+    
+    public cliente buscarCliente(String cpf) {
+        for (cliente cliente : clientes) {
+            if (cliente.getCpf().equals(cpf)) {
             
-          }
-    } 
-
+                return cliente;
+            }
+        }
+        System.out.println("33trteturr");
+        return null;
+    }
 }
