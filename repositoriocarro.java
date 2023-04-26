@@ -27,9 +27,9 @@ public class repositoriocarro {
         veiculos.remove(veicula);
     }
 
-    public void listaveiculos(){
+    public void listar(){
         for (int i = 0; i <veiculos.size(); i++) {
-            System.out.println( "modelo:" + veiculos.get(i).getModelo() +"," + "marca:" + veiculos.get(i).getMarca() + "," + "codigo:" + veiculos.get(i).getCodigo() + "," + "disponivel:" + veiculos.get(i).isDisponivel());
+            System.out.println( "modelo:" + veiculos.get(i).getModelo() +",  " + "marca:" + veiculos.get(i).getMarca() + ",  " + "codigo:" + veiculos.get(i).getCodigo() + ",  " + "disponivel:" + veiculos.get(i).isDisponivel());
         }
     }
 

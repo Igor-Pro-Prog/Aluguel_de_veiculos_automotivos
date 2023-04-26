@@ -24,7 +24,12 @@
         
         public void setCpf(String cpf) {
             this.cpf = cpf;
-    }
+        }
+           
+        public void mostrarDados(){
+            System.out.println("nome:"+getNome() + "cpf:" + getCpf());
+        }
+
     }
     
 

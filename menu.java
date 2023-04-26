@@ -48,7 +48,7 @@ public class menu {
         							veiculo.setCodigo(codigo);
         							repositoriocarro.cadastrarVeiculo(veiculo);
         							System.out.println("veiculo cadastrado");
-        							repositoriocarro.listaveiculos();
+        							repositoriocarro.listar();
         							break;
 
         						case 2:
@@ -56,7 +56,7 @@ public class menu {
         							System.out.println("digite o codigo do carro q deseja remover");
         							int cod = Integer.valueOf(scanner.nextLine());
         							repositoriocarro.deletarVeiculo(cod);
-        							repositoriocarro.listaveiculos();
+        							repositoriocarro.listar();
         							break;
 
         						case 3:
@@ -70,7 +70,7 @@ public class menu {
         							cliente cliente = new cliente(nome, cpf, numero);
         							repositorioclientes.cadastrarCliente(cliente);
         							System.out.println("cliente cadastrado");
-        							repositorioclientes.listaclientes();
+        							repositorioclientes.listar();
         							break;
 
         						case 4:
@@ -81,8 +81,9 @@ public class menu {
         							String delCpf = scanner.nextLine();
         							System.out.println("digite o numero do cliente q deseja remover");
         							int delNum = Integer.valueOf(scanner.nextLine());
-        							repositorioclientes.deletarCliente(delNome, delCpf, delNum);
-        							repositorioclientes.listaclientes();
+									cliente delCliente = new cliente(delNome, delCpf, delNum);
+        							repositorioclientes.deletarCliente(delCliente);
+        							repositorioclientes.listar();
         							break;
         						
         						case 5:

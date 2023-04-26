@@ -2,7 +2,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class repositorioclientes {
+public class repositorioclientes extends repositoriocarro {
     public List<cliente> clientes =  new ArrayList<cliente>();
 
     public  repositorioclientes() {
@@ -14,19 +14,19 @@ public class repositorioclientes {
        
     }
 
-    public void deletarCliente(String nome ,String cpf, int numero){
-    	cliente clienta = new cliente(nome, cpf, numero);
+    public void deletarCliente(cliente c){
+    	cliente clienta = c;
         for(cliente cliente  : clientes){       	
-            if(cliente.getNumero() == numero){
+            if(cliente.getNumero() == c.getNumero()){
             clienta = cliente;
             }
         }
         clientes.remove(clienta);
     }
-
-    public void listaclientes(){
+    @Override
+    public void listar(){
         for (int i = 0; i <clientes.size(); i++) {
-            System.out.println( "nome:" + clientes.get(i).getNome() +"," + "cpf:" + clientes.get(i).getCpf() + "numero:" + clientes.get(i).getNumero());    
+            System.out.println( "nome:" + clientes.get(i).getNome() +",  " + "cpf:" + clientes.get(i).getCpf() +",  " + "numero:" + clientes.get(i).getNumero());    
         }
     }
     
@@ -37,6 +37,7 @@ public class repositorioclientes {
                 return cliente;
             }
         }
+
         return null;
     }
 }

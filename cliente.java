@@ -16,10 +16,16 @@ public class cliente extends pessoa{
     public int getNumero() {
         return numero;
     }
-    
+
     public void setNumero(int numero) {
         this.numero = numero;
     }
+
+    @Override
+    public void mostrarDados(){
+        System.out.println("nome:"+getNome() + "cpf:" + getCpf() + "numero:" + getNumero() );
+    }
+
     
     public veiculo buscarVeiculoalugado(String modelo) {
         for (veiculo veiculo : veiculos) {

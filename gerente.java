@@ -3,19 +3,23 @@
 //import java.util.ArrayList;
 
 public class gerente extends pessoa {
-    private String senha;
+    private String id;
 
-     public gerente(String nome, String cpf, String senha){
+    public gerente(String nome, String cpf, String id){
         super(nome,cpf);
-        this.senha = senha;
+        this.id = id;
      }
 
-     public String getSenha() {
-        return senha;
+    public String getId() {
+        return id;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setId(String senha) {
+        this.id= id;
     }
 
+    @Override
+    public void mostrarDados(){
+        System.out.println("nome:"+getNome() + "cpf:" + getCpf() + "Id:" + getId());
+    }
 }
