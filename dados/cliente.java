@@ -22,7 +22,7 @@ public class cliente extends pessoa{
     
     @Override
 	public void mostrarDados(){
-        System.out.println("nome:"+ getNome() + "\ncpf:" + getCpf() + "\nlogin:" + getLoginCli() + "\nsenha:" + getsenhaCli() );
+        System.out.println("NOME: "+ getNome() + " CPF: " + getCpf() + " LOGIN: " + getLoginCli() + " SENHA: " + getsenhaCli());
     }
     
     public veiculo buscarVeiculoalugado(String modelo) {
