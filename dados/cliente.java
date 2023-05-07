@@ -1,16 +1,16 @@
 package dados;
-import java.util.List;
+import java.util.ArrayList;
 
 public class cliente extends pessoa{
 	private String loginCli;
     private int senhaCli;
-    public List<veiculo> veiculos;
+    public ArrayList<veiculo> veiculos;
     
     public cliente(String nome ,int cpf,String loginCli, int senhaCli) {
     	   super(nome,cpf);
     	   this.loginCli = loginCli;
            this.senhaCli = senhaCli;
-    }
+           this.veiculos = new ArrayList<veiculo>();    }
     
     public int getsenhaCli() {
         return senhaCli;
