@@ -10,7 +10,7 @@ public class pessoa {
     }
        
     public void mostrarDados(){
-        System.out.println("nome:"+getNome() + "cpf:" + getCpf());
+        System.out.println("NOME: "+getNome() + " CPF: " + getCpf());
     }
 
 	public String getNome() {
