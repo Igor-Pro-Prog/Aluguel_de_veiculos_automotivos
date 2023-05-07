@@ -44,4 +44,8 @@ public class veiculo {
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
     }
+    
+    public String toString() {
+    	return "MODELO: " +  this.modelo +  " MARCA: " + this.marca + " CODIGO: " + this.codigo + " DISPONIBILIDADE: " + this.disponivel;
+    }
 }
