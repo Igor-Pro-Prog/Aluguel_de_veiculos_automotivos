@@ -10,7 +10,7 @@ public class pessoa {
     }
        
     public void mostrarDados(){
-        System.out.println("NOME: "+getNome() + " CPF: " + getCpf());
+        System.out.println("NOME: "+getNome() + "\nCPF: " + getCpf());
     }
 
 	public String getNome() {
@@ -28,4 +28,5 @@ public class pessoa {
 	public void setCpf(int cpf) {
 		this.cpf = cpf;
 	}
+	
 }
