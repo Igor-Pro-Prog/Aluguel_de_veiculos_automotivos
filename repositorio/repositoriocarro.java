@@ -8,7 +8,7 @@ public class repositoriocarro {
     public List<veiculo> veiculos =  new ArrayList<veiculo>();
     
     public repositoriocarro() {
-    	veiculo v = new veiculo("volks", "gol", 1996);
+    	veiculo v = new veiculo("volks", "gol", "1fj6");
     	veiculos.add(v);
     }
     
@@ -17,9 +17,9 @@ public class repositoriocarro {
         System.out.println("\n\033[0;32mVeiculo Cadastrado!\033[0m");
     }
 
-    public void deletarVeiculo(int codigo){
+    public void deletarVeiculo(String placa){
         for(veiculo veiculo : veiculos){
-            if(veiculo.getCodigo() == codigo){
+            if(veiculo.getplaca().equals(placa)){
             	veiculos.remove(veiculo);
 				System.out.println("\n\033[0;32mVeiculo Removido!\033[0m");
 				break;
@@ -31,57 +31,59 @@ public class repositoriocarro {
     	System.out.println("VEICULOS DA LOJA:");
     	if(veiculos.size() > 0) {
     		for (int i = 0; i <veiculos.size(); i++) {
-    			System.out.println("MODELO: " + veiculos.get(i).getModelo() + " MARCA: " + veiculos.get(i).getMarca() + " CODIGO: " + veiculos.get(i).getCodigo() + " DISPONIVEL: " + veiculos.get(i).isDisponivel());
+    			System.out.println("MODELO: " + veiculos.get(i).getModelo() + " MARCA: " + veiculos.get(i).getMarca() + " PLACA: " + veiculos.get(i).getplaca() + " DISPONIVEL: " + veiculos.get(i).isDisponivel());
     		}
     	}else {
-    		System.out.println("NENHUM VEICULO NA LOJA");
+    		System.out.println("\033[0;31mNENHUM VEICULO NA LOJA\033[0m");
     	}
     }
     
-    public void listardisponibilidade(){
+    public int listardisponibilidade(){
     	System.out.println("VEICULOS DISPONIVEIS:");
     	if(veiculos.size() > 0) {
     		for (int i = 0; i <veiculos.size(); i++) {
             	if(veiculos.get(i).isDisponivel() == true) {       		
-                System.out.println( "modelo:" + veiculos.get(i).getModelo() +",  " + "marca:" + veiculos.get(i).getMarca() + ",  " + "codigo:" + veiculos.get(i).getCodigo() + ",  " + "disponivel:" + veiculos.get(i).isDisponivel());
-            	}        	
-            }
-    	}else {
-    		System.out.println("NENHUM VEICULO DISPONIVEL NA LOJA");
+                System.out.println( "modelo:" + veiculos.get(i).getModelo() +",  " + "marca:" + veiculos.get(i).getMarca() + ",  " + "placa:" + veiculos.get(i).getplaca() + ",  " + "disponivel:" + veiculos.get(i).isDisponivel());
+            	} 
+    		}
+    		return 0;
     	}
+    	System.out.println("\033[0;31mNENHUM VEICULO DISPONIVEL NA LOJA\033[0m");
+    	return 1;
     }
     
-    public veiculo buscarVeiculoDisponivel(String modelo) {
+    public veiculo buscarVeiculoDisponivel(String placa) {
         for (veiculo veiculo : veiculos) {
-            if (veiculo.getModelo().equals(modelo) && veiculo.isDisponivel()) {
+            if (veiculo.getplaca().equals(placa) && veiculo.isDisponivel()) {
                 return veiculo;
             }
         }
         return null;
     }
     
-    public void devolverVeiculo(String modelo, cliente cliente) {
-        veiculo veiculo = cliente.buscarVeiculoalugado(modelo);
+    public void devolverVeiculo(String placa, cliente cliente) {
+        veiculo veiculo = cliente.buscarVeiculoalugado(placa);
 
         if (veiculo != null && !veiculo.isDisponivel()) {
             veiculo.setDisponivel(true);
             cliente.removerVeiculonalistadoCliente(veiculo);
-            System.out.println("Veículo " + veiculo.getModelo() + " devolvido.");
+            veiculos.add(veiculo);
+            System.out.println("\n\033[0;33Veículo " + veiculo.getModelo() + " devolvido.\033[0m");
         } else {
-            System.out.println("Veículo não encontrado");
+            System.out.println("\n\033[0;31mVeículo não encontrado\033[0m");
         }
     }
     
-    public void alugarVeiculo(String modelo, cliente cliente) {
-        veiculo veiculo = buscarVeiculoDisponivel(modelo);
+    public void alugarVeiculo(String placa, cliente cliente) {
+        veiculo veiculo = buscarVeiculoDisponivel(placa);
     
         if (veiculo != null && cliente != null) {
             veiculo.setDisponivel(false);
             cliente.adicionarVeiculonaListadoCliente(veiculo);
-            System.out.println("Veículo:" + veiculo.getModelo() + "," + " alugado para o cliente " + cliente.getNome());
-            System.out.println("Veículo alugado");       
+            veiculos.remove(veiculo);
+            System.out.println("\n\033[0;32mVeículo com placa:" + veiculo.getplaca() + "," + " alugado para o cliente " + cliente.getNome()+ "\033[0m");      
         } else {
-            System.out.println("\n\033[0;33mVeículo não disponível ou cliente não encontrado\033[0m");
+            System.out.println("\n\033[0;31mVeículo não disponível ou cliente não encontrado\033[0m");
         }
     }
     
