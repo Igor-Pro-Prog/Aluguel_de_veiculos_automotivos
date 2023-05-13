@@ -25,9 +25,9 @@ public class cliente extends pessoa{
         System.out.println("NOME: "+ getNome() + " CPF: " + getCpf() + " LOGIN: " + getLoginCli() + " SENHA: " + getsenhaCli());
     }
     
-    public veiculo buscarVeiculoalugado(String modelo) {
+    public veiculo buscarVeiculoalugado(String placa) {
         for (veiculo veiculo : veiculos) {
-            if (veiculo.getModelo().equals(modelo)) {
+            if (veiculo.getplaca().equals(placa)) {
                 return veiculo;
             }
         }
