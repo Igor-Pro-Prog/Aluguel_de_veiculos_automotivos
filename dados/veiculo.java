@@ -4,21 +4,21 @@ public class veiculo {
     private String modelo;
     private String marca;
     private boolean disponivel;
-    private int codigo;
+    private String placa;
     
-    public veiculo(String modelo,String marca,int codigo) {
+    public veiculo(String modelo,String marca,String placa) {
     	this.modelo = modelo;
     	this.marca = marca;
-        this.codigo = codigo;
+        this.placa = placa;
         this.disponivel = true;
     }
     
-    public int getCodigo() {
-        return codigo;
+    public String getplaca() {
+        return placa;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setCodigo(String placa) {
+        this.placa = placa;
     }
 
     public String getModelo() {
@@ -46,6 +46,7 @@ public class veiculo {
     }
     
     public String toString() {
-    	return "MODELO: " +  this.modelo +  " MARCA: " + this.marca + " CODIGO: " + this.codigo + " DISPONIBILIDADE: " + this.disponivel;
+    	return "MODELO: " +  this.modelo +  " MARCA: " + this.marca + " PLACA: " + this.placa + " DISPONIBILIDADE: " + this.disponivel;
     }
+    
 }
