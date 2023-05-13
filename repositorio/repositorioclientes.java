@@ -33,7 +33,7 @@ public class repositorioclientes {
                 clientes.get(i).mostrarDados();
     		}   
         }else {
-        	System.out.println("NENHUM CLIENTE CADASTRADO NA LOJA");
+        	System.out.println("\n\033[0;31mNENHUM CLIENTE CADASTRADO NA LOJA\033[0m");
         }
     }
     
